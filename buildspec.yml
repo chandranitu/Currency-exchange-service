@@ -1,6 +1,16 @@
 version: 0.2
 
+env:
+  variables:
+    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
+
 phases:
+  install:
+    commands:
+    - echo installing Maven...
+    - apt-get update -y
+    - apt-get install -y maven
+    - sudo apt-get install docker-ce
   build:
     commands:
       - echo Build started on `date`      
@@ -12,3 +22,9 @@ phases:
 artifacts:
   files:
     - target/Currency-conversion-service-0.0.1-SNAPSHOT.jar
+    - appspec.yml
+  discard-paths: yes
+
+cache:
+  paths:
+    - '/root/.m2/**/*'
