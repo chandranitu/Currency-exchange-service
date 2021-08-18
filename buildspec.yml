@@ -10,7 +10,7 @@ phases:
     - echo installing Maven...
     - apt-get update -y
     - apt-get install -y maven
-    - sudo apt-get install docker-ce
+    - apt-get install docker-ce
   build:
     commands:
       - echo Build started on `date`      
