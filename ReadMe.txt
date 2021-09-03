@@ -24,6 +24,8 @@ docker run -d --name e2 -p 8100:8100  conversionservice
   
 # AWS ECS
 
-docker.io/cnsnoida/exchangeservice
+docker.io/cnsnoida/exchangeservice:latest
+docker.io/cnsnoida/conversionservice:latest
+
 hard limit- 512
 port mapping 8000 8000
